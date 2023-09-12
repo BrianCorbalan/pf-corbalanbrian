@@ -1,0 +1,50 @@
+// variables
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+
+/* estilos header*/
+header{
+    background-color: $color-principal;
+    @include flex-center-between;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 3;
+    nav{
+        ul{
+            display: flex;
+            list-style: none;
+            gap: $medida-standard;
+            li{
+                a{
+                    text-decoration: none;
+                    color: $color-letra;
+                    position: relative;
+                    /* hover animacion*/
+                    &:after{
+                        content: "";
+                        position: absolute;
+                        background-color: $color-letra;
+                        height: 3px;
+                        width: 0;
+                        left: 0;
+                        bottom: -10px;
+                        transition: 0.3s;                    
+                    }
+                    &:hover:after{
+                        width: 100%;
+                    }                                  
+                }
+            }
+        }
+    }
+}
+
+.paginaSeleccionada{
+    font-weight: 500;
+}
+
+
+

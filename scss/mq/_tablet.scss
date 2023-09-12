@@ -1,0 +1,145 @@
+// variables
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+
+/* mq tablet */
+
+@media screen and (min-width: 600px){
+
+    /*header style */
+    #menu{
+        display: none;
+    }
+
+    #navbarDesktop {
+        @include flex-center;       
+    }
+
+    /* main style*/
+    main{
+        margin-top: 90px;
+    }
+
+    /* Banner Principal */    
+    .bannerPrincipal{
+        h1{
+            font-size: $medida-standard*3; 
+        }
+    }
+
+    /*Baner secundario estilo */
+    .bannerSecundario{
+        height: 200px;
+    }
+
+    .bannerSecundarioTitulo{
+        h1{
+        font-size: $medida-standard*4;
+        }
+    }    
+    
+    /*nuevos lanzamientos estilos */    
+    .ofertas{
+        p{
+        display: block;
+        font-size: $font-tablet;
+        }
+    }
+
+    .nuevosLanzamientos{
+        height: 100vh;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 33%);
+        gap: $medida-standard;
+        margin-bottom: $medida-standard*2;
+    }
+
+    .ofertas{
+        margin-bottom: $medida-standard*2;
+        a{
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .lanzamientoUno{
+        grid-row: span 3;
+        grid-column: span 2;
+    }
+
+    .lanzamientoDos{
+        grid-row: span 2;
+        grid-column: span 2;
+    }
+
+    .lanzamientoTres, .lanzamientoCuatro{
+        grid-column: span 1;
+    }
+
+    /* Destacados de la semana */
+    .destacadosSemana{
+        height: 100vh;
+    }
+
+    /* pagina ofertas */
+    .ofertasOfertas{
+        height: 75vh;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 100%;
+        gap: $medida-standard;
+        margin-bottom: $medida-standard*2;
+    }
+
+    .descuentoPrincipalUno{
+        grid-column: span 1;
+    }
+
+    .descuentoPrincipalDos{
+        grid-column: span 1;
+    }
+
+    /* estilos remeras page */
+    .remeraYDescripcion{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 20% 80%;
+        margin-bottom: $medida-standard*2;
+    }
+
+    .remeraYDescripcion{
+        h1{
+        grid-column: span 2;
+        font-size: $medida-standard*4;
+        }
+    }
+
+    .remeraBG{
+        grid-column: span 1;
+    }
+
+    .remeraBG{
+        img{
+        width: 100%;
+        height: 100%;
+        }        
+    }
+    
+    .descripcionDeLaRemera{
+        grid-column: span 1;
+    }
+
+    /* footer */
+    .resumen{
+        width: 300px;
+        display: block;
+    }
+
+    .whatsappPhone{
+        position: sticky;
+        bottom: 5%;
+        left: 90%;
+    }
+    
+}

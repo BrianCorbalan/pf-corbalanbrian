@@ -1,0 +1,47 @@
+// variables
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+@import "../utilidades/extend";
+
+/*estilos contacto*/
+
+.backgroundImg{
+    background-image: url(../img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.formDatosContenedor {
+    gap: $medida-standard;
+    display: flex;
+}
+
+.formDatos{
+    margin: $medida-standard 0px $medida-standard 0px;
+    width: 100%;
+    input{
+        @extend %borde-contacto;
+        width: 100%;
+        padding: 5px;
+    }
+}
+
+.btnEnviar{
+    margin-top: 10px;
+    padding-bottom: 10px;
+    input{
+        color: $color-letra;
+        background-color: $color-principal;
+        padding: 10px;
+        @extend %borde-contacto;
+    }
+}
+
+#text{
+    margin-top: $medida-standard;
+    width: 100%;
+    height: 100px;    
+    @extend %borde-contacto;
+    padding: $medida-standard;
+
+}

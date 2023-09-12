@@ -1,0 +1,542 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/* estilos generales */
+html {
+  font-family: 'Roboto', sans-serif; }
+
+body {
+  background-color: #141414;
+  color: #ffffff; }
+
+#menu {
+  background-color: #e30613; }
+
+#navbarDesktop {
+  display: none; }
+
+.logo {
+  align-items: center; }
+
+.usuario {
+  display: flex;
+  gap: 1rem; }
+  .usuario a img {
+    width: 30px; }
+
+main {
+  margin-top: 90px; }
+
+/* titulos */
+h1 {
+  font-family: 'gloock', serif;
+  text-align: center;
+  margin-bottom: 10px;
+  padding-top: 10px; }
+
+h2 {
+  text-align: center;
+  font-family: 'gloock', serif; }
+
+/* parrafos reseteados por mi, porque bootstrap hace lo que quiere */
+p {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.whatsapp {
+  display: none; }
+
+.whatsappPhone {
+  position: sticky;
+  bottom: 10%;
+  left: 85%; }
+
+/* animaciones */
+.animacionCaja {
+  transition: all 0.5s ease-in-out; }
+  .animacionCaja:hover {
+    transform: scale(1.02);
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px 1px rgba(255, 255, 255, 0.1); }
+
+.animacionNuevosLanzamientos {
+  transition: all 0.7s ease-in-out; }
+  .animacionNuevosLanzamientos:hover {
+    transform: scale(1.04);
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px 1px rgba(255, 255, 255, 0.1); }
+
+/* estilos header*/
+header {
+  background-color: #e30613;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 3; }
+  header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem; }
+    header nav ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      position: relative;
+      /* hover animacion*/ }
+      header nav ul li a:after {
+        content: "";
+        position: absolute;
+        background-color: #ffffff;
+        height: 3px;
+        width: 0;
+        left: 0;
+        bottom: -10px;
+        transition: 0.3s; }
+      header nav ul li a:hover:after {
+        width: 100%; }
+
+.paginaSeleccionada {
+  font-weight: 500; }
+
+/* estilos index */
+/* Nuevos Lanzamientos */
+.nuevosLanzamientos {
+  height: 200vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 25%); }
+
+.ofertas {
+  margin-bottom: 1rem; }
+  .ofertas a img {
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
+    background-color: white;
+    border-radius: 15px; }
+
+.off {
+  color: #e30613; }
+
+/* Destacados de la semana */
+.destacadosSemana {
+  height: 50vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 50%);
+  gap: 1rem;
+  margin-bottom: 2rem; }
+
+#productos {
+  height: 50vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 50%);
+  gap: 1rem;
+  margin-bottom: 2rem; }
+
+#productosBuzos {
+  height: 50vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 50%);
+  gap: 1rem;
+  margin-bottom: 2rem; }
+
+.productoCinco {
+  display: none; }
+
+/* footer */
+footer {
+  background-color: #e30613;
+  padding: 2rem; }
+
+.logoFooter {
+  display: flex;
+  align-items: center; }
+
+.resumen {
+  width: 200px;
+  display: none; }
+
+.legales {
+  text-align: center;
+  font-style: italic;
+  font-size: 12px; }
+
+.logoYRedes {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem; }
+
+.redes {
+  display: flex;
+  align-items: center;
+  gap: 2rem; }
+
+/* estilos banner */
+.bannerPrincipal {
+  position: absolute;
+  right: 15%;
+  bottom: 1.25rem;
+  left: 15%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 90px; }
+  .bannerPrincipal h1 {
+    font-weight: bold;
+    font-size: 2rem; }
+
+.tituloPrincipal {
+  padding: 20px; }
+
+.bannerSecundario {
+  margin-bottom: 2rem; }
+
+.bannerSecundarioTitulo {
+  position: absolute;
+  right: 15%;
+  top: 10px;
+  left: 15%;
+  color: #fff;
+  text-align: center; }
+  .bannerSecundarioTitulo h1 {
+    font-size: 2rem; }
+
+/* estilo productos */
+/* estilo ofertas */
+.ofertasOfertas {
+  height: 125vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 50%); }
+  .ofertasOfertas p {
+    text-align: center; }
+
+.productosOfertas {
+  display: inline-block;
+  margin-bottom: 20px; }
+  .productosOfertas img {
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px 5px 10px 0px; }
+
+.precioViejo {
+  color: grey;
+  text-decoration: line-through;
+  font-size: 12px; }
+
+/*estilos nosotros*/
+.nosotros {
+  text-align: center;
+  padding-bottom: 2rem; }
+
+.nosotros h2 {
+  margin-bottom: 1rem; }
+
+.formDatos input, .btnEnviar input, #text {
+  border-style: none;
+  border-radius: 5px; }
+
+/*estilos contacto*/
+.backgroundImg {
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.formDatosContenedor {
+  gap: 1rem;
+  display: flex; }
+
+.formDatos {
+  margin: 1rem 0px 1rem 0px;
+  width: 100%; }
+  .formDatos input {
+    width: 100%;
+    padding: 5px; }
+
+.btnEnviar {
+  margin-top: 10px;
+  padding-bottom: 10px; }
+  .btnEnviar input {
+    color: #ffffff;
+    background-color: #e30613;
+    padding: 10px; }
+
+#text {
+  margin-top: 1rem;
+  width: 100%;
+  height: 100px;
+  padding: 1rem; }
+
+/*estilos remeras*/
+.remeraYDescripcion {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10% 45% 45%;
+  gap: 1rem; }
+  .remeraYDescripcion h1 {
+    font-size: 3rem; }
+
+.remeraBG {
+  background: linear-gradient(160deg, red, #bb0000 60%, #0f0f0f 60%, #141414); }
+  .remeraBG img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+
+.descripcionDeLaRemera {
+  padding: 1rem; }
+
+/* mq tablet */
+@media screen and (min-width: 600px) {
+  /*header style */
+  #menu {
+    display: none; }
+  #navbarDesktop {
+    display: flex;
+    align-items: center; }
+  /* main style*/
+  main {
+    margin-top: 90px; }
+  /* Banner Principal */
+  .bannerPrincipal h1 {
+    font-size: 3rem; }
+  /*Baner secundario estilo */
+  .bannerSecundario {
+    height: 200px; }
+  .bannerSecundarioTitulo h1 {
+    font-size: 4rem; }
+  /*nuevos lanzamientos estilos */
+  .ofertas p {
+    display: block;
+    font-size: 12px; }
+  .nuevosLanzamientos {
+    height: 100vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 33%);
+    gap: 1rem;
+    margin-bottom: 2rem; }
+  .ofertas {
+    margin-bottom: 2rem; }
+    .ofertas a img {
+      width: 100%;
+      height: 100%; }
+  .lanzamientoUno {
+    grid-row: span 3;
+    grid-column: span 2; }
+  .lanzamientoDos {
+    grid-row: span 2;
+    grid-column: span 2; }
+  .lanzamientoTres, .lanzamientoCuatro {
+    grid-column: span 1; }
+  /* Destacados de la semana */
+  .destacadosSemana {
+    height: 100vh; }
+  #productos{
+    height: 100vh; }
+  #productosBuzos{
+    height: 100vh; }
+  /* pagina ofertas */
+  .ofertasOfertas {
+    height: 75vh;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100%;
+    gap: 1rem;
+    margin-bottom: 2rem; }
+  .descuentoPrincipalUno {
+    grid-column: span 1; }
+  .descuentoPrincipalDos {
+    grid-column: span 1; }
+  /* estilos remeras page */
+  .remeraYDescripcion {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 20% 80%;
+    margin-bottom: 2rem; }
+  .remeraYDescripcion h1 {
+    grid-column: span 2;
+    font-size: 4rem; }
+  .remeraBG {
+    grid-column: span 1; }
+  .remeraBG img {
+    width: 100%;
+    height: 100%; }
+  .descripcionDeLaRemera {
+    grid-column: span 1; }
+  /* footer */
+  .resumen {
+    width: 300px;
+    display: block; }
+  .whatsappPhone {
+    position: sticky;
+    bottom: 5%;
+    left: 90%; } }
+
+/* mq desktop */
+@media screen and (min-width: 1024px) {
+  #menu {
+    display: none; }
+  /* Banner Principal */
+  .bannerPrincipal h1 {
+    font-size: 5rem; }
+  /*Baner secundario estilo */
+  .bannerSecundario {
+    height: 250px; }
+  .bannerSecundarioTitulo h1 {
+    font-size: 5rem; }
+  /*nuevos lanzamientos estilos */
+  .ofertas p {
+    display: block;
+    font-size: 1rem; }
+  .nuevosLanzamientos {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 33%);
+    gap: 1rem;
+    margin-bottom: 2rem; }
+  .ofertas {
+    margin-bottom: 8rem; }
+    .ofertas a img {
+      width: 100%;
+      height: 100%; }
+  .lanzamientoUno {
+    grid-row: span 3; }
+  .lanzamientoDos, .lanzamientoTres, .lanzamientoCuatro {
+    grid-column: span 2;
+    grid-row: span 1; }
+  /*Destacados de la semana */
+  .productoCinco {
+    display: block; }
+  .destacadosSemana {
+    height: 50vh;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr; }
+  #productos{
+    height: 50vh;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr; }
+  #productosBuzos{
+    height: 50vh;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr; }
+/* seccion ofertas */
+  .ofertasOfertas {
+    height: 75vh; }
+  /* estilos remeras page */
+  .remeraYDescripcion {
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 20% 80%;
+    margin-bottom: 2rem; }
+  .remeraBG {
+    grid-column: span 1; }
+    .remeraBG img {
+      width: 100%;
+      height: 100%; }
+  .remeraYDescripcion h1 {
+    grid-column: span 2;
+    font-size: 4rem; }
+  .descripcionDeLaRemera {
+    grid-column: span 1; }
+  /* footer */
+  .resumen {
+    width: 600px; }
+  .whatsapp {
+    display: block;
+    position: sticky;
+    bottom: 10%;
+    left: 85%; }
+  .whatsappPhone {
+    display: none; } }
+
+  /* carrito*/  
+
+  #filter__input{
+    display: block; 
+    margin: auto; 
+    width: 40%
+}
+
+#containerCarrito {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  flex-direction: column;
+}
+
+#carrito {
+  width: 80%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+th {
+  padding: 0 2rem;
+}
+
+th img{
+  width: 100%;
+  height: 85%;
+  object-fit: cover;
+  background-color: white;
+  border-radius: 15px; 
+}
+
+thead th {
+  background-color: #252525;
+  font-weight: bold;
+}
+
+th, td {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+td {
+  vertical-align: middle;
+}
+
+tfoot th {
+  text-align: right;
+}
+
+table h3 {
+  text-align: center;
+}
+
+/*CarritoCounter*/
+.cantidad-carrito {
+    
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 4px;
+  top: 37px;
+  right: 14px;
+  position: absolute;
+  display: none;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  align-items: center;
+}
+
+.sumar {
+  cursor: pointer;
+}
+
+.restar {
+  cursor: pointer;
+}

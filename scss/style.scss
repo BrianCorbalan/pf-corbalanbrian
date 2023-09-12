@@ -1,0 +1,20 @@
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// import
+@import "generales/generales";
+@import "generales/header";
+@import "html/home";
+@import "generales/footer";
+@import "generales/banner";
+@import "html/productos";
+@import "html/ofertas";
+@import "html/nosotros";
+@import "html/contacto";
+@import "html/remeras";
+@import "mq/tablet";
+@import "mq/desktop";

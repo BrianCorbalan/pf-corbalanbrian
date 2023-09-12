@@ -1,0 +1,33 @@
+// variables
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+
+
+/* estilo ofertas */
+.ofertasOfertas{
+    height: 125vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,50%);
+    p{
+        text-align: center;
+    }
+}
+
+.productosOfertas{
+    display: inline-block;
+    margin-bottom: 20px;
+    img{
+        @include tarjetas(white,$border-radius-standard);
+        padding: 10px;
+        margin: 10px 5px 10px 0px;         
+    }
+}
+
+
+.precioViejo{
+    color:$color-precio-viejo;
+    text-decoration: line-through;
+    font-size: 12px;
+}

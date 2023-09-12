@@ -1,0 +1,31 @@
+// variables
+@import "../utilidades/variables";
+
+
+// flex center between
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-center-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin animacion-duracion($duracion){
+    transition: all $duracion ease-in-out;
+}
+
+@mixin animacion-hover($scale){
+    transform: scale($scale);
+    border-radius: $border-radius-standard;
+    box-shadow: 2px 2px 5px 1px rgba(255, 255, 255, 0.1);    
+}
+
+@mixin tarjetas($color,$borde){
+    background-color: $color;
+    border-radius: $borde;
+}
+

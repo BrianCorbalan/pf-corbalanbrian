@@ -1,0 +1,86 @@
+// variables
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+
+/* estilos generales */
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: $color-fondo;
+    color: $color-letra;
+}
+
+#menu {
+    background-color: $color-principal;
+}
+
+#navbarDesktop{
+    display: none;
+}
+
+.logo{
+    align-items: center;
+}
+
+.usuario {
+    display: flex;
+    gap: $medida-standard;
+    a{
+        img{
+            width: 30px;
+        }
+    }
+}
+
+main{
+    margin-top: 90px;
+}
+
+/* titulos */
+h1{
+    font-family: 'gloock', serif;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-top: 10px; 
+}
+
+h2 {
+    text-align: center;
+    font-family: 'gloock', serif;
+}
+
+/* parrafos reseteados por mi, porque bootstrap hace lo que quiere */
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.whatsapp{
+    display: none;
+}
+
+.whatsappPhone{
+    position: sticky;
+    bottom: 10%;
+    left: 85%;
+}
+
+/* animaciones */
+
+.animacionCaja{
+    @include animacion-duracion(0.5s);
+    &:hover{
+        @include animacion-hover(1.02);
+    }
+}
+
+.animacionNuevosLanzamientos{
+    @include animacion-duracion(0.7s);
+    &:hover{
+        @include animacion-hover(1.04);
+    }
+}

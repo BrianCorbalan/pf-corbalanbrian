@@ -1,0 +1,42 @@
+// variables
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+/* estilos banner */
+
+.bannerPrincipal{
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    text-align: center;
+    margin-bottom: $medida-standard;
+    margin-top: 90px;
+    h1{
+        font-weight: bold;
+        font-size: $medida-standard*2;
+    }
+}
+
+
+.tituloPrincipal{
+    padding: 20px;
+}
+
+.bannerSecundario{
+    margin-bottom: $medida-standard*2;
+}
+
+.bannerSecundarioTitulo{
+    position: absolute;
+    right: 15%;
+    top: 10px;
+    left: 15%;
+    color: #fff;
+    text-align: center;
+    h1{
+        font-size: $medida-standard*2;
+    }
+}

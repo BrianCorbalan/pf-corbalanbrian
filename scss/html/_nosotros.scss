@@ -1,0 +1,16 @@
+// variables
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+
+/*estilos nosotros*/
+
+.nosotros {
+    text-align: center;
+    padding-bottom: $medida-standard*2;
+
+}
+
+.nosotros h2{
+    margin-bottom: $medida-standard;
+}

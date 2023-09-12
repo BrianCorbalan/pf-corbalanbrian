@@ -1,0 +1,37 @@
+// variables
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+
+/* footer */
+
+footer{
+    background-color: $color-principal;
+    padding: $medida-standard*2;
+}
+
+.logoFooter{
+    @include flex-center;
+}
+
+.resumen{
+    width: 200px;
+    display: none;
+}
+
+.legales{
+    text-align: center;
+    font-style: italic;
+    font-size: 12px;
+}
+
+.logoYRedes{
+    display: flex;
+    justify-content: space-around;
+    margin: $medida-standard*2;
+}
+
+.redes{
+    @include flex-center;
+    gap: $medida-standard*2;
+}

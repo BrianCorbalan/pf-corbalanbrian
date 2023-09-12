@@ -1,0 +1,30 @@
+// variables
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+
+/*estilos remeras*/
+
+.remeraYDescripcion{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 45% 45%;
+    gap: $medida-standard;
+    h1{
+        font-size: $medida-standard*3;
+    }
+}
+
+.remeraBG {    
+    background:linear-gradient(160deg, red, rgb(187, 0, 0) 60%, #0f0f0f 60%, $color-fondo);
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.descripcionDeLaRemera {
+    padding: $medida-standard;
+
+}
