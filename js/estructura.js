@@ -5,7 +5,7 @@ const divProductosBuzos = document.getElementById("productosBuzos")
 export let productosDisponibles = JSON.parse(localStorage.getItem("productos"))
 export let productosDisponiblesBuzos = [];
 
-fetch("../data-buzo.json")
+fetch("../db/data-buzo.json")
   .then((response) => response.json())
   .then((data) => {
     productosDisponiblesBuzos = data;
