@@ -126,7 +126,7 @@ header {
 
 /* Destacados de la semana */
 .destacadosSemana {
-  height: 50vh;
+  height: 65vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 50%);
@@ -134,7 +134,7 @@ header {
   margin-bottom: 2rem; }
 
 #productos {
-  height: 50vh;
+  height: 65vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 50%);
@@ -142,7 +142,7 @@ header {
   margin-bottom: 2rem; }
 
 #productosBuzos {
-  height: 50vh;
+  height: 65vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 50%);
@@ -416,15 +416,15 @@ footer {
   .productoCinco {
     display: block; }
   .destacadosSemana {
-    height: 50vh;
+    height: 65vh;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr; }
   #productos{
-    height: 50vh;
+    height: 65vh;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr; }
   #productosBuzos{
-    height: 50vh;
+    height: 65vh;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr; }
 /* seccion ofertas */
