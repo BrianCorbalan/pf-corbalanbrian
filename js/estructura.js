@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sessionStorage.removeItem("usuario");
       setTimeout(() => {
         location.reload();
-      }, 3000);
+      }, 2000);
       
     });
     dropdownContentDiv.appendChild(pElement);
