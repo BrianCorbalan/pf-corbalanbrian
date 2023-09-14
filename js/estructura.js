@@ -1,7 +1,10 @@
 import { comprarProducto, comprarProductoBuzo, carritoCounter,} from "./carrito.js"
 
+const userLogin = document.getElementById("userLogin")
 const divProductos = document.getElementById("productos")
 const divProductosBuzos = document.getElementById("productosBuzos")
+
+let usuarioLogeado = JSON.parse(sessionStorage.getItem("usuario"))
 export let productosDisponibles = JSON.parse(localStorage.getItem("productos"))
 export let productosDisponiblesBuzos = [];
 
@@ -52,22 +55,64 @@ export const generarCardsProductos = (productos) => {
     <p class="card-text">Categoria: ${categoria}</p>
     
     <p class="card-text">Precio: <b>$${precio}</b></p>
-    <button id="btn${id}" class="btn btn-danger">Agregar al carrito</button>
-    `;
-    
+    <button id="btn${id}" class="btn btn-danger">Agregar al carrito</button>    
+
+    ${
+      usuarioLogeado?.admin === true ? `<button id="eliminar${id}" class="btn btn-danger">Eliminar</button>`  : ""
+      
+    }
+    </div>
+    </div>`;
+
     divProductos.appendChild(card);
-    
+
     const btnComprar = document.getElementById(`btn${id}`)
     btnComprar.addEventListener("click", () => comprarProducto(id))
+
+    if(usuarioLogeado?.admin === true){
+      const btnEliminar = document.getElementById(`eliminar${id}`)
+      btnEliminar.addEventListener("click", () => eliminarProducto(id))
+    }
   });
 };
     
     
 carritoCounter();
-    
-document.addEventListener("DOMContentLoaded", () => {    
-  generarCardsProductos(productosDisponibles);    
+// `${usuarioLogeado.user}`
+document.addEventListener("DOMContentLoaded", () => {   
+  const dropdownDiv = document.createElement("div");
+  dropdownDiv.className = "dropdown";
+
+  if (usuarioLogeado !== null) {
+    const spanElement = document.createElement("span");
+    spanElement.textContent = usuarioLogeado.user;
+    dropdownDiv.appendChild(spanElement);
+  }
+
+  const dropdownContentDiv = document.createElement("div");
+  dropdownContentDiv.className = "dropdown-content";
+
+  if (usuarioLogeado !== null) {
+    const pElement = document.createElement("button");
+    pElement.textContent = "Cerrar Sesión";
+    pElement.id = "cerrar__sesion";
+    pElement.addEventListener("click", () => {
+      alert(`Gracias por comprar en nuestra tienda ${usuarioLogeado.user}. Usuario deslogeado`);
+      sessionStorage.removeItem("usuario");
+      location.reload();
+    });
+    dropdownContentDiv.appendChild(pElement);
+  }
+
+  dropdownDiv.appendChild(dropdownContentDiv);
+
+  const container = document.getElementById("userLogin");
+  container.appendChild(dropdownDiv);
+
+  generarCardsProductos(productosDisponibles);
 });
+
+
 
 
 // export const generarCardsProductosBuzos = (buzos) => {
