@@ -1,6 +1,6 @@
 import { comprarProducto, comprarProductoBuzo, carritoCounter,} from "./carrito.js"
 
-const userLogin = document.getElementById("userLogin")
+
 const divProductos = document.getElementById("productos")
 const divProductosBuzos = document.getElementById("productosBuzos")
 
@@ -78,71 +78,47 @@ export const generarCardsProductos = (productos) => {
     
     
 carritoCounter();
-// `${usuarioLogeado.user}`
+
 document.addEventListener("DOMContentLoaded", () => {   
   const dropdownDiv = document.createElement("div");
   dropdownDiv.className = "dropdown";
+  const container = document.getElementById("userLogin");
 
   if (usuarioLogeado !== null) {
     const spanElement = document.createElement("span");
     spanElement.textContent = usuarioLogeado.user;
     dropdownDiv.appendChild(spanElement);
-  }
 
-  const dropdownContentDiv = document.createElement("div");
-  dropdownContentDiv.className = "dropdown-content";
+    const dropdownContentDiv = document.createElement("div");
+    dropdownContentDiv.className = "dropdown-content";
 
-  if (usuarioLogeado !== null) {
     const pElement = document.createElement("button");
     pElement.textContent = "Cerrar Sesión";
     pElement.id = "cerrar__sesion";
     pElement.addEventListener("click", () => {
-      alert(`Gracias por comprar en nuestra tienda ${usuarioLogeado.user}. Usuario deslogeado`);
+      Swal.fire({
+        text: `Gracias por comprar en nuestra tienda ${usuarioLogeado.user}. Te esperamos pronto`,
+        confirmButtonColor: '#bb0000',
+      });
       sessionStorage.removeItem("usuario");
-      location.reload();
+      setTimeout(() => {
+        location.reload();
+      }, 3000);
+      
     });
     dropdownContentDiv.appendChild(pElement);
+    dropdownDiv.appendChild(dropdownContentDiv);
+  } else {
+    const a = document.createElement("a");
+    a.href = "../pages/usuarios.html";
+    a.textContent = "Login";
+    dropdownDiv.appendChild(a);
   }
 
-  dropdownDiv.appendChild(dropdownContentDiv);
-
-  const container = document.getElementById("userLogin");
   container.appendChild(dropdownDiv);
-
   generarCardsProductos(productosDisponibles);
 });
 
-
-
-
-// export const generarCardsProductosBuzos = (buzos) => {
-  //   divProductosBuzos.innerHTML = "";
-  
-  //   buzos.forEach((producto) => {
-        
-//   const { imagen, nombre, categoria, precio, id, link, alt} = producto
-
-//     let cardBuzos = document.createElement("div");
-//     cardBuzos.className = "ofertas animacionCaja";
-//     cardBuzos.innerHTML = `
-//     <a href="${link}">
-//     <img src="${imagen}" alt="${alt}">
-//     </a>
-//     <p class="card-title">${nombre}</p>
-//     <p class="card-text">Categoria: ${categoria}</p>
-
-//     <p class="card-text">Precio: <b>$${precio}</b></p>
-//     <button id="btn${id}" class="btn btn-danger">Agregar al carrito</button>
-//     `;
-
-//     divProductosBuzos.appendChild(cardBuzos);
-
-//     const btnComprar = document.getElementById(`btn${id}`)
-//     btnComprar.addEventListener("click", () => comprarProductoBuzo(id))
-
-
-//   });
-// };  
 
 
 

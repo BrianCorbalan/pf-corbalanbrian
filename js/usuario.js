@@ -25,30 +25,37 @@ btnLogin.addEventListener("click", (e) => {
 })
 
 const validarYlogear = (user, pass) => {
-
-    const userExiste = usuarios.find((usuario)  => usuario?.user === user)
-
-    if(userExiste === undefined || userExiste.pass !== pass){
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Error en el usuario o contraseña',
-            confirmButtonColor: '#bb0000',
-          })
-    }else{
-        Swal.fire(`Bienvenido ${user}`)        
-
-        let usuario = {
-            user: userExiste.user,
-            pass: userExiste.pass,
-            admin: userExiste.admin
-        }
-
-        sessionStorage.setItem("usuario", JSON.stringify(usuario))
-        location.href = "../index.html"
+    const userExiste = usuarios.find((usuario) => usuario?.user === user);
+  
+    if (userExiste === undefined || userExiste.pass !== pass) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Error en el usuario o contraseña',
+        confirmButtonColor: '#bb0000',
+      });
+    } else {
+      Swal.fire({        
+        
+        text: `Bienvenido ${user}`,
+        confirmButtonColor: '#bb0000',
+      });
+  
+      let usuario = {
+        user: userExiste.user,
+        pass: userExiste.pass,
+        admin: userExiste.admin,
+      };
+  
+      sessionStorage.setItem('usuario', JSON.stringify(usuario));
+  
+      
+      setTimeout(() => {
+        location.href = '../index.html';
+      }, 2000);
     }
-    
-}
+  };
+  
 
 
 btnRegister.addEventListener("click", (e) => {
@@ -71,16 +78,30 @@ const validarYRegistrar = (nuevoUsuario) => {
         usuarios.push(nuevoUsuario)
         localStorage.setItem("usuarios", JSON.stringify(usuarios))
         sessionStorage.setItem("usuario", JSON.stringify(nuevoUsuario))
+        Swal.fire({        
         
-        alert(`Gracias ${nuevoUsuario.user} por registrarte.. usted sera redirigido a la pagina principal`)
+            text: `Gracias por registrarte ${nuevoUsuario.user}.
+            Redirigiendo al Home`,
+            confirmButtonColor: '#bb0000',
+          });
+
         console.log(usuarios)
-        location.href = "../index.html"       
+        setTimeout(() => {
+            location.href = '../index.html';
+        }, 2000);      
     }else{
-        alert(`El usuario ya existe`)
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'El usuario ya existe',
+            footer: '<a href="../pages/usuarios.html">Loguearse</a>'
+          });
 
 
         sessionStorage.setItem("usuario", JSON.stringify(usuario))
-        location.href = "../inicio.html"
+        setTimeout(() => {
+            location.href = '../index.html';
+        }, 2000);
     }
 
 }
